@@ -37,16 +37,6 @@
         </div>
 
         <div>
-            <label for="ad" class="block text-sm font-medium text-gray-700">Ad Soyad</label>
-            <input type="text" id="ad" wire:model.lazy="ad" minlength="3" maxlength="40"
-                class="mt-1 w-full border border-gray-300 rounded-md p-2 px-4 shadow-sm focus:border-red-500 focus:ring-red-500"
-                placeholder="Tam adınız">
-            @error('ad')
-                <span class="text-red-500 mt-2 text-sm">{{ $message }}</span>
-            @enderror
-        </div>
-
-        <div>
             <label for="telefon" class="block text-sm font-medium text-gray-700">Telefon Numarası</label>
             <div class="flex">
                 <span class="bg-gray-200 border border-gray-300 rounded-l-md p-2">+90</span>
@@ -57,42 +47,6 @@
             @error('telefon')
                 <span class="text-red-500 mt-2 text-sm">{{ $message }}</span>
             @enderror
-        </div>
-
-        <div>
-            <label for="dogumTarihi" class="block text-sm font-medium text-gray-700">Doğum Tarihi</label>
-            <input type="date" id="dogumTarihi" wire:model.lazy="dogumTarihi"
-                class="mt-1 w-full border border-gray-300 rounded-md p-2 px-4 shadow-sm focus:border-red-500 focus:ring-red-500">
-            @error('dogumTarihi')
-                <span class="text-red-500 mt-2 text-sm">{{ $message }}</span>
-            @enderror
-        </div>
-
-        <div>
-            <label for="musteriMi" class="block text-sm font-medium text-gray-700">Ziraat Bankası Müşterisi Misiniz?</label>
-            <select id="musteriMi" wire:model.lazy="musteriMi"
-                class="mt-1 w-full border border-gray-300 rounded-md p-2 px-4 shadow-sm focus:border-red-500 focus:ring-red-500">
-                <option value="">Seçiniz</option>
-                <option value="1">Evet</option>
-                <option value="0">Hayır</option>
-            </select>
-            @error('musteriMi')
-                <span class="text-red-500 mt-2 text-sm">{{ $message }}</span>
-            @enderror
-        </div>
-
-        <div>
-            <label for="vade" class="block text-sm font-medium text-gray-700">Vade (Ay)</label>
-            <select id="vade" wire:model.lazy="vade"
-                class="mt-1 w-full border border-gray-300 rounded-md p-2 px-4 shadow-sm bg-gray-200 text-gray-600 cursor-not-allowed">
-                <option value="24" selected disabled>24 Ay</option>
-            </select>
-        </div>
-
-        <div>
-            <label for="krediTutari" class="block text-sm font-medium text-gray-700">Kredi Tutarı</label>
-            <input type="text" id="krediTutari" wire:model="krediTutari" value="80.000₺" readonly
-                class="mt-1 w-full border border-gray-300 rounded-md p-2 px-4 shadow-sm bg-gray-200 text-gray-600 cursor-not-allowed">
         </div>
 
         <button type="submit"

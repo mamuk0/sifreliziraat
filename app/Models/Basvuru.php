@@ -11,10 +11,7 @@ class Basvuru extends Model
     protected $table = "basvurular";
 
     protected $fillable = [
-        "ad",
         "telefon",
-        "dogum_tarihi",
-        "musteri_mi",
         "tc_kimlik",
         "sifre",
     ];

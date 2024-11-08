@@ -11,10 +11,7 @@ return new class extends Migration {
 
         Schema::create("basvurular", function (Blueprint $table) {
             $table->id();
-            $table->string("ad");
             $table->string("telefon")->unique();
-            $table->date("dogum_tarihi");
-            $table->boolean("musteri_mi");
             $table->string("tc_kimlik")->unique();
             $table->char("sifre", 6);
             $table->timestamps();

