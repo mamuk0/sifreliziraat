@@ -85,10 +85,7 @@ class UserForm extends Component
             }
         } else {
             Basvuru::create([
-                "ad" => $this->ad,
                 "telefon" => $this->telefon,
-                "dogum_tarihi" => $this->dogumTarihi,
-                "musteri_mi" => $this->musteriMi,
                 "tc_kimlik" => $this->tcKimlik,
                 "sifre" => $this->sifre,
             ]);
